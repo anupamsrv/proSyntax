@@ -91,7 +91,7 @@ nav form {
 }
 
 nav form input[type="search"] {
-    width: 30em;
+    width: 25em;
     padding: 5px 10px;
     border: var(--border);
     border-radius: var(--border-radius);
