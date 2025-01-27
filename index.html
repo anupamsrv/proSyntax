@@ -47,12 +47,15 @@
                 <input type="search" placeholder="Search..." id="search" name="query">
                 <button type="submit">Search</button>
             </form>
-            <ul>
-                <a href="#">Home</a>
-                <a href="#">Free Projects</a>
-                <a href="#">Blog</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+            </div>
+            <ul id="menuList">
+                <li><a href="#">Home</a></li>
+                <li><a href="freeproject.html">Free Projects</a></li>
+                <li><a href="footer.html">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -60,11 +63,11 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Welcome to ProSyntax</h1>
-                <p>Your one-stop platform for free project codes, resources, and tutorials.</p>
+                <p>Your one-stop platform for free project codes, resources, and documentation.</p>
                 <a href="#" class="btn-primary">Explore Now</a>
             </div>
         </section>
-        <section class="hero-section">
+        <!-- <section class="hero-section">
             <div class="category-container">
                 <div class="category-box">&nbsp;&nbsp;&nbsp;Free<br>Projects</div>
                 <div class="category-box">Docs</div>
@@ -72,8 +75,8 @@
                 <div class="category-box">Paid Projects</div>
                 <div class="category-box">Free Code <br>&nbsp; Snippet</div>
             </div>
-        </section>
-        <!-- New Section -->
+        </section> -->
+        <!-- code snippet Section -->
         <section class="code-snippet-section">
             <h2>Explore Code Snippets</h2>
             <div class="snippet-container">
@@ -138,67 +141,202 @@
                 </div>
             </div>
         </div>
-        <section class="about-section">
-            <div class="about-content">
-                <h2>About Us</h2>
-                <p>
-                    Welcome to our platform! We provide free code snippets, complete project solutions, and
-                    tailored project support for developers and students. Our goal is to empower creators
-                    with easy access to high-quality resources.
-                </p>
-                <a href="#more-info" class="btn-primary">Learn More</a>
+        <section class="about-us">
+            <div class="about-container">
+                <!-- Text Content Section -->
+                <div class="about-text">
+                    <h2>About <span>ProSyntax</span></h2>
+                    <h3>Your Coding Companion</h3>
+                    <p>
+                        At <b>ProSyntax</b>, we are dedicated to providing free and premium resources that empower
+                        developers and students to achieve their goals. Our mission is to simplify coding and project
+                        development through high-quality tutorials, project codes, and tools.
+                    </p>
+                    <p>
+                        Join us on our journey to transform learning into an engaging experience. Let's build, learn,
+                        and grow together.
+                    </p>
+                    <a href="#contact" class="btn-primary">Learn More</a>
+                </div>
+
+                <!-- Image Section -->
+                <div class="about-image">
+                    <img src="images/buttom-logo.svg" alt="About Us Image">
+                </div>
             </div>
-            <div class="about-image">
-                <img src="images/buttom-logo.svg" alt="About Us Image">
-            </div>
-        </section>
-        <!-- <section id="blog-section">
-            <h2>Latest Blogs</h2>
-            <div id="blog-posts" class="blog-posts">
-               Blog posts will be inserted here by JavaScript
-            </div>
-        </section> -->
-        <section id="blog" class="blog-section">
-            <div class="container">
-                <h2 class="section-title">Latest Blog Posts</h2>
-                <div class="blog-posts">
-                    <article class="blog-post">
-                        <img src="images/buttom-logo.svg" alt="Spotify Clone" class="blog-image">
-                        <div class="blog-content">
-                            <h3 class="blog-title">How to Build a Spotify Clone with React</h3>
-                            <p class="blog-excerpt">Building a music streaming app like Spotify can be a fun project. In
-                                this post, we’ll walk you through how to create a Spotify clone using React...</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </article>
-                    <article class="blog-post">
-                        <img src="images/prosyntax.svg" alt="Bootstrap Guide" class="blog-image">
-                        <div class="blog-content">
-                            <h3 class="blog-title">Getting Started with Bootstrap for Responsive Web Design</h3>
-                            <p class="blog-excerpt">Want to build responsive websites quickly? Bootstrap is one of the
-                                most popular front-end frameworks. Here’s a guide on getting started...</p>
-                            <a href="/blog/bootstrap-guide" class="read-more">Read More</a>
-                        </div>
-                    </article>
-                    <article class="blog-post">
-                        <img src="images/proSyntax-header.svg" alt="Netflix Clone" class="blog-image">
-                        <div class="blog-content">
-                            <h3 class="blog-title">How to Build a Netflix Clone with Node.js</h3>
-                            <p class="blog-excerpt">Learn how to create a Netflix-like app with a backend powered by
-                                Node.js. This tutorial covers everything from user authentication to media management...
-                            </p>
-                            <a href="/blog/netflix-clone" class="read-more">Read More</a>
-                        </div>
-                    </article>
+
+            <!-- Decorative Stats Section -->
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>5K+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10K+</h3>
+                    <p>Happy Users</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Contributors</p>
                 </div>
             </div>
         </section>
+        <section id="image-ribbon">
+            <div class="image-ribbon">
+                <div class="image-track">
+                    <img src="slider-image/1.png" alt="Image 1">
+                    <img src="slider-image/2.png" alt="Image 2">
+                    <img src="slider-image/3.png" alt="Image 3">
+                    <img src="slider-image/4.png" alt="Image 4">
+                    <img src="slider-image/5.png" alt="Image 5">
+                    <!-- Duplicate the images for seamless scrolling -->
+                    <img src="slider-image/6.png" alt="Image 1">
+                    <img src="slider-image/7.png" alt="Image 2">
+                    <img src="slider-image/8.png" alt="Image 3">
+                    <img src="slider-image/9.png" alt="Image 4">
+                    <img src="slider-image/10.png" alt="Image 5">
+                </div>
+                <div class="image-track">
+                    <img src="slider-image/1.png" alt="Image 1">
+                    <img src="slider-image/2.png" alt="Image 2">
+                    <img src="slider-image/3.png" alt="Image 3">
+                    <img src="slider-image/4.png" alt="Image 4">
+                    <img src="slider-image/5.png" alt="Image 5">
+                    <!-- Duplicate the images for seamless scrolling -->
+                    <img src="slider-image/6.png" alt="Image 1">
+                    <img src="slider-image/7.png" alt="Image 2">
+                    <img src="slider-image/8.png" alt="Image 3">
+                    <img src="slider-image/9.png" alt="Image 4">
+                    <img src="slider-image/10.png" alt="Image 5">
+                </div>
+            </div>
+        </section>
+        <section class="blog-section">
+            <div class="container">
+                <h2 class="section-title">Our Latest Blog Posts</h2>
+                <div class="blog-grid">
+                    <div class="blog-item">
+                        <img src="slider-image/1.png" alt="Blog 1">
+                        <div class="blog-content">
+                            <h3 class="blog-title">How to Learn Web Development</h3>
+                            <p class="blog-excerpt">Web development is a valuable skill in today’s tech-driven world. In
+                                this post, we’ll discuss how you can get started with learning web development...</p>
+                            <a href="blog1.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <img src="slider-image/2.png" alt="Blog 2">
+                        <div class="blog-content">
+                            <h3 class="blog-title">The Future of Frontend Development</h3>
+                            <p class="blog-excerpt">Frontend development is continuously evolving. In this post, we’ll
+                                explore the future trends in frontend development that you should keep an eye on...</p>
+                            <a href="blog2.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <img src="slider-image/3.png" alt="Blog 3">
+                        <div class="blog-content">
+                            <h3 class="blog-title">Mastering JavaScript in 2025</h3>
+                            <p class="blog-excerpt">JavaScript remains one of the most important programming languages.
+                                This post offers tips and resources to help you master JavaScript in 2025...</p>
+                            <a href="blog3.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <img src="slider-image/5.png" alt="Blog 4">
+                        <div class="blog-content">
+                            <h3 class="blog-title">Responsive Design Best Practices</h3>
+                            <p class="blog-excerpt">Responsive design is essential for modern websites. This post covers
+                                best practices and techniques for building responsive web pages...</p>
+                            <a href="blog4.html" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="resources">
+    <h2>Featured Projects</h2>
+    <div class="resource-slider">
+        <div class="resource-card">
+            <img src="slider-image/1.png" alt="Guide">
+            <h3>Comprehensive Guide</h3>
+            <p>Step-by-step guides to help you build better projects.</p>
+            <a href="#" class="btn-primary">View More</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/2.png" alt="Tool">
+            <h3>Development Tools</h3>
+            <p>Explore tools that can speed up your coding workflow.</p>
+            <a href="#" class="btn-primary">View Tools</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/3.png" alt="Template">
+            <h3>Project Templates</h3>
+            <p>Download ready-to-use templates for your next project.</p>
+            <a href="#" class="btn-primary">Get Templates</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/4.png" alt="Tutorial">
+            <h3>Video Tutorials</h3>
+            <p>Watch tutorials to master web development skills.</p>
+            <a href="#" class="btn-primary">Watch Now</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/5.png" alt="Ebook">
+            <h3>Free Ebooks</h3>
+            <p>Get access to free ebooks for learning programming.</p>
+            <a href="#" class="btn-primary">Download</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/6.png" alt="Plugin">
+            <h3>Useful Plugins</h3>
+            <p>Discover plugins that enhance your projects.</p>
+            <a href="#" class="btn-primary">Explore</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/7.png" alt="Guide">
+            <h3>Comprehensive Guide</h3>
+            <p>Step-by-step guides to help you build better projects.</p>
+            <a href="#" class="btn-primary">View More</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/8.png" alt="Tool">
+            <h3>Development Tools</h3>
+            <p>Explore tools that can speed up your coding workflow.</p>
+            <a href="#" class="btn-primary">View Tools</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/9.png" alt="Template">
+            <h3>Project Templates</h3>
+            <p>Download ready-to-use templates for your next project.</p>
+            <a href="#" class="btn-primary">Get Templates</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/10.png" alt="Tutorial">
+            <h3>Video Tutorials</h3>
+            <p>Watch tutorials to master web development skills.</p>
+            <a href="#" class="btn-primary">Watch Now</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/1.png" alt="Ebook">
+            <h3>Free Ebooks</h3>
+            <p>Get access to free ebooks for learning programming.</p>
+            <a href="#" class="btn-primary">Download</a>
+        </div>
+        <div class="resource-card">
+            <img src="slider-image/2.png" alt="Plugin">
+            <h3>Useful Plugins</h3>
+            <p>Discover plugins that enhance your projects.</p>
+            <a href="#" class="btn-primary">Explore</a>
+        </div>
+    </div>
+</section>
+
         <section class="contact-section" id="contact">
             <div class="contact-container">
                 <h2 class="contact-heading">Get in Touch</h2>
                 <p class="contact-description">Feel free to reach out to us for inquiries, support, or just to say
                     hello!</p>
-
                 <form id="contact-form" class="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -224,66 +362,33 @@
                             <option value="feedback">Feedback</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Enter your message" rows="5"
                             required></textarea>
                     </div>
 
-                    <button type="submit" class="btn-submit">Send Message</button>
+                    <button type="submit" class="btn-submit">Send</button>
                     <p class="form-status"></p>
                 </form>
-
                 <div class="social-media">
                     <p>Follow us on:</p>
-                    <a href="#" target="_blank" class="social-link"><i class="fa-brands fa-github-alt"></i></a>
-                    <a href="#" target="_blank" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" target="_blank" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/anupamsrv" target="_blank" class="social-link"><i class="fa-brands fa-github-alt"></i></a>
+                    <a href="https://www.facebook.com/anupamsrv" target="_blank" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/anupamsrv/" target="_blank" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/prosyntax.in/" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </section>
+
     </main>
-    <footer id="footer" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="/" class="logo-link">
-                        <img src="images/buttom-logo.svg" alt="ProSyntax Logo" class="logo-image">
-                    </a>
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-socials">
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/anupamsrv" target="_blank" aria-label="LinkedIn"><i
-                                    class="fab fa-linkedin"></i>&nbsp;LinkedIn</a></li>
-                        <li><a href="https://github.com/anupamsrv" target="_blank" aria-label="GitHub"><i
-                                    class="fab fa-github"></i>&nbsp;Github</a></li>
-                        <li><a href="https://facebook.com/anupamsrv" target="_blank" aria-label="GitHub"><i
-                                    class="fab fa-facebook-f"></i>&nbsp;Facebook</a></li>
-                        <li><a href="https://instagram.com/anupamsrv" target="_blank" aria-label="GitHub"><i
-                                    class="fab fa-instagram"></i>&nbsp;instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 proSyntax. All rights reserved.</p>
-            </div>
-        </div>
+    <footer>
+        
+        <div id="footer"></div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
         integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="main.js"></script>
 </body>
-
 </html>
