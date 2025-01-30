@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Header</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header id="header" class="header">
         <nav>
             <a href="#"><img src="/images/proSyntax-header.svg" alt="proSyntax logo here"></a>
             <form action="action_page.php" method="get">
                 <input type="search" placeholder="Search..." id="search" name="query">
                 <button type="submit">Search</button>
             </form>
-            <ul>
-                <a href="#">Home</a>
-                <a href="#">Free Projects</a>
-                <a href="#">Blog</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+            </div>
+            <ul id="menuList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="freeproject.html">Free Projects</a></li>
+                <li><a href="https://blog.prosyntax.in" target="_blank">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>

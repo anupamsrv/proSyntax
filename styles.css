@@ -16,6 +16,7 @@ html {
 
 /* Root Variables */
 :root {
+    --glass: rgba(255, 255, 255, 0.1);
     --color1: #6bbdea;
     --color2: #e7d9d2;
     --color3: #31333f;
@@ -46,16 +47,38 @@ html {
     --background3: linear-gradient(0deg, #04428c 20%, #e7d9d2 80%);
     --background4: linear-gradient(0deg, #00000080 40%, #04428c 60%);
 }
-
+/* scrollbar design */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--color2);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--background2);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--background1);
+  }
 /*  Navbar Styling */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background: var(--color3);
-    color: var(--color2);
     font-family: var(--font1);
+    backdrop-filter: blur(15px);
+    background: var(--glass);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-icon {
@@ -69,15 +92,10 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: var(--white);
-    margin: 0 10px;
+    color: var(--color3);
+    padding: 5px;
     font-size: var(--text-size);
-    transition: var(--transition);
-}
-
-nav a:hover {
-    color: var(--color1);
-    text-shadow: var(--box-shadow);
+    font-weight: 500;
 }
 
 nav img {
@@ -95,32 +113,33 @@ nav form input[type="search"] {
     padding: 5px 10px;
     border: var(--border);
     border-radius: var(--border-radius);
-    outline: none;
     font-size: var(--text-size);
     font-family: var(--font2);
     transition: var(--transition);
 }
 
 nav form input[type="search"]:focus {
-    border-color: var(--golden);
+    border-color: var(--blue);
     box-shadow: var(--box-shadow);
 }
 
 nav form button {
-    padding: 5px 15px;
+    padding: 6.5px 15px;
     margin-left: 5px;
     background-color: var(--color1);
     color: var(--color3);
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
+    font-weight: 500;
     font-size: var(--text-size);
     font-family: var(--font2);
     transition: var(--transition);
 }
 
 nav form button:hover {
-    background-color: var(--golden);
+    background-color: var(--blue);
+    color: var(--golden);
     box-shadow: var(--light-shadow-hover);
 }
 
@@ -138,8 +157,10 @@ nav ul a {
 }
 
 nav ul a:hover {
-    background-color: var(--gray);
+    color: var(--golden);
+    background-color: var(--blue);
     box-shadow: var(--dark-shadow-hover);
+    transition: var(--transition);
 }
 
 /* Hero Section Styling */
@@ -163,7 +184,6 @@ nav ul a:hover {
     font-size: var(--heading);
     color: var(--color1);
     text-shadow: var(--dark-shadow);
-    margin-top: -70px;
 }
 
 .hero p {
@@ -172,62 +192,6 @@ nav ul a:hover {
     color: var(--color3);
     font-weight: 600;
     font-family: var(--font2);
-}
-
-.btn-primary {
-    display: inline-block;
-    padding: 10px 25px;
-    font-size: var(--text-size);
-    color: var(--white);
-    background-color: var(--blue);
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-    box-shadow: var(--dark-shadow);
-}
-
-.btn-primary:hover {
-    background-color: var(--golden);
-    color: var(--blue);
-    box-shadow: var(--light-shadow-hover);
-}
-
-/* Category Box Container */
-.category-container {
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(5, 5fr);
-    gap: 20px;
-    margin: 0 20rem ;
-    display: none;
-}
-
-/* Category Boxes */
-.category-box {
-    width: 150px;
-    height: 150px;
-    margin-top: -280px;
-    background-color: var(--color1);
-    color: var(--color2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: var(--border-radius);
-    box-shadow: var(--dark-shadow);
-    transition: var(--transition);
-}
-
-.category-box h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin: 0;
-}
-
-.category-box:hover {
-    transform: perspective(1000px) rotateY(10deg) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Code Snippet Section */
@@ -406,7 +370,7 @@ nav ul a:hover {
     font-size: 16px;
     font-weight: bold;
     color: var(--color2);
-    background: var(--blue);
+    background: var(--color1);
     text-decoration: none;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -414,7 +378,8 @@ nav ul a:hover {
 }
 
 .btn-primary:hover {
-    background: var(--golden);
+    background: var(--blue);
+    color: var(--golden);
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
@@ -644,19 +609,6 @@ nav ul a:hover {
     margin-bottom: 15px;
 }
 
-.btn-primary {
-    padding: 10px 20px;
-    background: #3498db;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: #2980b9;
-}
-
 /* Sliding animation */
 @keyframes slide {
     0% {
@@ -673,9 +625,6 @@ nav ul a:hover {
         /* Slide all cards */
     }
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {}
 
 /* Contact Section Styling */
 .contact-section {
@@ -810,6 +759,7 @@ nav ul a:hover {
     margin-left: 8rem;
 }
 
+/* footer */
 .footer {
     background-color: var(--color3);
     color: var(--color2);
@@ -857,11 +807,13 @@ nav ul a:hover {
 
 .footer-links a:hover,
 .footer-socials a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: var(--golden);
+    transition: var(--transition);
 }
 
 .footer-socials a {
-    font-size: 1.5rem;
+    font-size: var(--sub-heading);
 }
 
 .footer-socials a i {
@@ -873,23 +825,49 @@ nav ul a:hover {
 }
 
 .footer-bottom {
-    text-align: center;
     margin-top: 20px;
-    font-size: 0.9rem;
-}
-
-.footer-bottom p {
-    margin: 0;
+    font-size: 1rem;
 }
 
 #copy {
-    color: var(--background-color);
+    color: var(--color1);
     list-style: none;
     text-decoration: none;
 }
 
+.footer-bottom span {
+    position: absolute;
+    left: 45%;
+}
+
 /* Responsive Design */
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
+    nav img {
+        height: 80px;
+        margin-left: 1rem;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        font-size: 2rem;
+    }
+
+    #search {
+        width: 25vw;
+    }
+
+    form button {
+        width: 5vw;
+    }
+
+    .hero-content h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero-content p {
+        font-size: 2rem;
+    }
+
     #footer-top {
         height: 3rem;
         width: 150%;
@@ -900,7 +878,14 @@ nav ul a:hover {
     }
 }
 
-@media (max-width: 1024px) {
+@media screen and (min-width: 769px) {
+
+    nav ul li a {
+        padding: 10px 20px;
+        font-size: var(--text-size);
+
+    }
+
     .hero {
         height: 60vh;
         /* Reduced height for smaller screens */
@@ -908,31 +893,15 @@ nav ul a:hover {
 
     .hero h1 {
         font-size: 2.5rem;
-        /* Adjust font size */
     }
 
     .hero p {
         font-size: 1.2rem;
-        /* Smaller subheading */
     }
 
     .btn-primary {
         font-size: 1rem;
-        /* Smaller button size */
         padding: 8px 20px;
-    }
-
-    .category-container {
-        gap: 30px;
-        display: none;
-    }
-
-    .category-box {
-        width: 130px;
-        /* Smaller category box size */
-        height: 130px;
-        font-size: 14px;
-        /* Smaller font size for category text */
     }
 
     .blog-section .section-title {
@@ -946,7 +915,6 @@ nav ul a:hover {
 
     .blog-item img {
         height: 180px;
-        /* Slightly smaller images on smaller devices */
     }
 
     .blog-title {
@@ -965,35 +933,38 @@ nav ul a:hover {
         right: 14rem;
         top: -2.5rem;
     }
+
+    .footer-bottom span {
+        position: absolute;
+        left: 64%;
+    }
 }
 
-@media (max-width: 768px) {
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
 
-    /* Adjust Navbar for Small Screens */
     nav {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
+        padding: 10px;
     }
 
-    /* Center the anchor (a) tag and its contents */
     nav a {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+
     }
 
     nav a img {
         max-height: 100px;
         max-width: 100%;
-        margin-top: -15px;
+        margin: -20px 180px 0px;
     }
 
     .menu-icon {
         display: block;
         position: absolute;
-        left: 90%;
+        left: 5%;
         z-index: 5;
         font-size: var(--sub-heading);
     }
@@ -1004,12 +975,12 @@ nav ul a:hover {
 
     nav ul {
         position: absolute;
-        top: 70px;
+        top: 55px;
         left: 0;
         right: 0;
         flex-direction: column;
         text-align: center;
-        background: var(--color3);
+        background: var(--background);
         overflow: hidden;
     }
 
@@ -1018,17 +989,17 @@ nav ul a:hover {
     }
 
     nav form {
-        margin-top: 10px;
+        margin-top: -15px;
     }
 
     nav form input[type="search"],
     nav form button {
         margin: 5px;
+     
     }
 
     #search {
-        width: 60vw;
-        border: none;
+        width: 65vw;
     }
 
     form button {
@@ -1037,30 +1008,20 @@ nav ul a:hover {
 
     .hero {
         height: 50vh;
-        /* Further reduced height */
         padding: 5px 5px;
-        /* Reduced padding */
     }
 
     .hero h1 {
         font-size: 2rem;
-        /* Adjust font size */
     }
 
     .hero p {
         font-size: 1rem;
-        /* Smaller subheading */
     }
 
     .btn-primary {
         font-size: 0.9rem;
-        /* Smaller button size */
         padding: 6px 15px;
-    }
-
-    .category-container {
-        grid-template-columns: repeat(2, 1fr);
-        display: none;
     }
 
     .hero-heading {
@@ -1071,12 +1032,6 @@ nav ul a:hover {
         font-size: 1rem;
     }
 
-    .category-box {
-        width: 120px;
-        height: 120px;
-        font-size: 12px;
-        margin-top: -8rem;
-    }
 
     /* Code Snippet Section */
     .snippet-container {
@@ -1141,6 +1096,16 @@ nav ul a:hover {
         padding: 0 0.5rem;
     }
 
+    .footer-bottom p {
+        font-size: 0.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-bottom span {
+        display: none;
+    }
+
     .resource-slider {
         flex-wrap: nowrap;
         gap: 10px;
@@ -1155,7 +1120,60 @@ nav ul a:hover {
 
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-device-width: 480px) {
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    nav a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: var(--blue);
+
+    }
+
+    nav a img {
+        max-height: 100px;
+        max-width: 100%;
+        margin: -20px 180px 0px;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        left: 5%;
+        z-index: 5;
+        font-size: var(--sub-heading);
+    }
+
+    #menuList {
+        transition: all 0.5s;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        /* change nav bar background color */
+        background: var(--background);
+        overflow: hidden;
+    }
+
+    nav ul li {
+        list-style-type: none;
+    }
+
+    nav form {
+        margin-top: -15px;
+    }
 
     nav form input[type="search"],
     nav form button {
@@ -1163,16 +1181,16 @@ nav ul a:hover {
     }
 
     #search {
-        width: 100%;
-        border: none;
+        width: 65vw;
     }
 
     .hero {
-        height: 40vh;
+        height: 45vh;
         padding: 5px 5px;
     }
 
     .hero h1 {
+        margin-top: 20%;
         font-size: 1.8rem;
     }
 
@@ -1183,19 +1201,6 @@ nav ul a:hover {
     .btn-primary {
         font-size: 0.8rem;
         padding: 5px 12px;
-    }
-
-    .category-container {
-        display: grid;
-        grid-template-columns: repeat(3, 2fr);
-        display: none;
-        gap: 9em;
-    }
-
-    .category-container .category-box:nth-child(4),
-    .category-container .category-box:nth-child(5) {
-        grid-column: span 1;
-        /* Each takes one column in the second row */
     }
 
     /* Popup */
@@ -1226,6 +1231,15 @@ nav ul a:hover {
         font-size: 0.85rem;
     }
 
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
     .about-section {
         flex-direction: column;
         gap: 20px;
@@ -1235,12 +1249,14 @@ nav ul a:hover {
         max-width: 100%;
     }
 
-    #footer-top {
-        height: 2.5rem;
-        width: 150%;
-        background: var(--blue-bayoux);
-        position: relative;
-        right: 5.5rem;
-        top: -2.5rem;
+    .footer-bottom p {
+        font-size: var(--text-size);
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .footer-bottom span {
+        display: none;
     }
 }
