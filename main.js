@@ -1,24 +1,24 @@
 //   hamburger open close menu
 let menuList = document.getElementById("menuList");
-        menuList.style.maxHeight = "0px";
-        function toggleMenu() {
-            if (menuList.style.maxHeight == "0px") {
-                menuList.style.maxHeight = "300px";
-            } else {
-                menuList.style.maxHeight = "0px";
-            }
-        }
+menuList.style.maxHeight = "0px";
+function toggleMenu() {
+  if (menuList.style.maxHeight == "0px") {
+    menuList.style.maxHeight = "300px";
+  } else {
+    menuList.style.maxHeight = "0px";
+  }
+}
 // slider
-const slider = document.querySelector('.resource-slider');
+const slider = document.querySelector(".resource-slider");
 
-slider.addEventListener('mouseover', () => {
-    slider.style.animationPlayState = 'paused'; // Pause animation
+slider.addEventListener("mouseover", () => {
+  slider.style.animationPlayState = "paused"; // Pause animation
 });
 
-slider.addEventListener('mouseout', () => {
-    slider.style.animationPlayState = 'running'; // Resume animation
+slider.addEventListener("mouseout", () => {
+  slider.style.animationPlayState = "running"; // Resume animation
 });
-// snippet pop up 
+// snippet pop up
 const popupOverlay = document.getElementById("popup-overlay");
 function openPopup() {
   popupOverlay.style.display = "flex";
@@ -51,11 +51,12 @@ fetch("header.html")
   });
 
 // Load the footer
-fetch("footer.html")
+fetch("../menu-pages/footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
   });
+
 // <!-- JavaScript to load header and footer End -->
 const hashtags = [
   "#Coding",

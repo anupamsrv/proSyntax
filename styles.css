@@ -15,6 +15,9 @@ html {
 }
 
 /* Root Variables */
+#active {
+    color: var(--blue);
+}
 :root {
     --glass: rgba(255, 255, 255, 0.1);
     --color1: #6bbdea;
@@ -839,6 +842,44 @@ nav ul a:hover {
     position: absolute;
     left: 45%;
 }
+/* term and conditions page css */
+.term-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--background1);
+    border-radius: 10px;
+    margin-top: 5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.term-container h1 {
+    text-align: center;
+    color: var(--blizzard-blue);
+    font-size: var(--heading);
+    margin-bottom: 20px;
+}
+.term-container h2 {
+    color: var(--blue);
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+.term-container p, ul {
+    font-size: var(--text-size);
+    line-height: 1.8;
+}
+.term-container ul {
+    padding-left: 20px;
+}
+.term-container a {
+    color: var(--golden);
+    text-decoration: none;
+    font-weight: bold;
+}
+.term-container a:hover {
+    text-decoration: underline;
+}
+/* about pages */
 
 /* Responsive Design */
 @media screen and (min-width: 1440px) {
@@ -853,7 +894,7 @@ nav ul a:hover {
     }
 
     #search {
-        width: 25vw;
+        width: 30vw;
     }
 
     form button {
@@ -881,11 +922,12 @@ nav ul a:hover {
 @media screen and (min-width: 769px) {
 
     nav ul li a {
-        padding: 10px 20px;
         font-size: var(--text-size);
-
     }
 
+    #search {
+        width: 25vw;
+    }
     .hero {
         height: 60vh;
         /* Reduced height for smaller screens */
@@ -1116,6 +1158,21 @@ nav ul a:hover {
     .resource-card {
         flex: 0 0 90%;
         /* Make cards larger and single-column on smaller screens */
+    }
+    .about-container-page {
+        padding: 3rem 5%;
+    }
+
+    .about-container-page h1 {
+        font-size: 2rem;
+    }
+
+    .about-container-page p {
+        font-size: 1rem;
+    }
+
+    .about-img {
+        max-width: 80%;
     }
 
 }

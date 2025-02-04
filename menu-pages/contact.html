@@ -31,12 +31,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+    <header>
+        <div id="header-container"></div>
+    </header>
+    <main>
+       <div class="contact-main">
+            <h1>Contact Us</h1>
+            <p>Get in touch with us for any queries or collaborations.</p>
+            <img src="../images/prosyntax.svg" alt="proSyntax Logo">
+            <form action="submit">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name..">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email..">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write something.."></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div id="footer-container"></div>
+    </footer>
+    <script src="app.js"></script>
 </body>
 </html>
